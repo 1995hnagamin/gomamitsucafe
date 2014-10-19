@@ -14,10 +14,6 @@ Plugin.create :gomamitsucafe do
     str
   end
 
-  (1..8).each do |i|
-    puts random_string i
-  end
-
   filter_show_filter do |msgs|
     msgs.map! do |m|
       Message.new(:message=>random_string(m.to_s.size),
