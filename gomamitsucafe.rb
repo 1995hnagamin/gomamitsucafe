@@ -3,12 +3,15 @@
 Plugin.create :gomamitsucafe do
 
   def random_string(length)
-    chars = "ごま蜜cafe".split('')
-    size = chars.size
-    
-    Array.new(length) { |idx|
-      chars[rand(size)]
-    }.join
+    token = ["ごま", "cafe", "ごま蜜cafe", "カフェ", "ごま蜜カフェ"]
+    str = ""
+    strlen = 0
+    until strlen >= length do
+      choice = token.sample
+      strlen += choice.size
+      str += choice
+    end
+    str
   end
 
   (1..8).each do |i|
